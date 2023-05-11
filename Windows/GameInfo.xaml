@@ -1,0 +1,75 @@
+﻿<Window x:Class="UIKitTutorials.Windows.GameInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIKitTutorials.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True"
+        ResizeMode="NoResize" WindowState="Normal"
+        Title="GameInfo" Height="450" Width="450">
+    <Grid>
+        <Border CornerRadius="8 0 0 8" Background="#F2F0F0">
+
+            <!-- Start: GridColumn Rigth -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- Start: Button Close | Restore | Minimize -->
+                <StackPanel Grid.Row="0" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="btnClose" Height="25" Width="25"  Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+                    <Button x:Name="btnRestore" Height="25" Width="25" Margin="5,0" Click="btnRestore_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                                <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                        <Setter Property="Content" Value="{DynamicResource restore}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnMinimize" Height="25" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                </StackPanel>
+                <!-- End: Button Close | Restore | Minimize -->
+                
+                
+                <StackPanel Grid.Row="1" Margin="0 10 0 0">
+                    <!-- Logo -->
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
+                        <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="{DynamicResource PrimaryBlueColor}" Width="25" Height="25" HorizontalAlignment="Left"/>
+                        <Label Content="Playground" Foreground="{DynamicResource PrimaryBlueColor}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
+                    </StackPanel>
+
+
+                    <StackPanel Margin="10 0 10 0">
+                        <Label x:Name="gameInfoName" Grid.Column="0" Content="Название игры" Foreground="{DynamicResource TextPrimaryColor}" FontSize="30" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        <Label x:Name="gameInfoPublisher" Grid.Column="1" Content="Издатель" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="15" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left">
+                            <Label.ToolTip>
+                                <ToolTip>
+                                    <StackPanel>
+                                        <Label x:Name="publisherCountry" Content="Страна" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="15" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                        <Label x:Name="publisherWebsite" Content="Вебсайт" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="15" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                    </StackPanel>
+                                </ToolTip>
+                            </Label.ToolTip>
+                        </Label>
+                        <Label x:Name="gameInfoDate" Content="Дата" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="15" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        <Label x:Name="gameInfoPrice" Content="500$" Foreground="#81F085" FontSize="15" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="gameInfoDescription" Text="Описание игры" Padding="3"  Foreground="#808080" FontSize="20" FontWeight="Regular" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                        <Button x:Name="buyButton" Foreground="White" FontSize="20" Height="40" HorizontalAlignment="Center" Background="{DynamicResource PrimaryBlueColor}" BorderThickness="0" Margin="0 20 0 0" Width="427" Click="buyButton_Click">
+                            Купить
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+    
+            
+        </Border>
+    </Grid>
+</Window>

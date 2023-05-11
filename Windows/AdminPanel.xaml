@@ -1,0 +1,29 @@
+﻿<Window x:Class="UIKitTutorials.Windows.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIKitTutorials.Windows"
+        mc:Ignorable="d" Background="Transparent"
+        Title="AdminPanel" Height="450" Width="800">
+    <Border CornerRadius="10" Background="Black">
+        <StackPanel>
+            <Grid Margin="10">
+                <StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
+                        <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="White" Width="25" Height="25" HorizontalAlignment="Left"/>
+                        <Label Content="Playground" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
+                    </StackPanel>
+                    <Label x:Name="panelName" Content="Админ панель" Foreground="White" FontSize="20" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label  Content="Статистика" Foreground="White" FontSize="20" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="soldGameCount" Content="Продано игр: " Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="soldGameMoney" Content="Продано игр на сумму: " Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="usersCount" Content="Количество пользователей: " Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Button x:Name="createGameButton" Foreground="White" FontSize="20" Height="40" HorizontalAlignment="Left" Background="#1ed5ec" BorderThickness="0" Margin="0 20 0 0" Width="160" Click="createGameButton_Click">
+                        Добавить игру
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>

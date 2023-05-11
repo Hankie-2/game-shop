@@ -1,0 +1,68 @@
+﻿<Window x:Class="ShopApplication.Windows.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApplication.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Registration" Height="600" Width="1000">
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Image Source="/Assets/login_picture.jpg" Stretch="UniformToFill">
+                <Image.Effect>
+                    <BlurEffect Radius="10"/>
+                </Image.Effect>
+                <Image.LayoutTransform>
+                    <ScaleTransform ScaleX="-1"/>
+                </Image.LayoutTransform>
+            </Image>
+        </Grid>
+
+        <Border Grid.Column="0">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="goToLoginButton" Foreground="White" FontSize="20" Height="60" HorizontalAlignment="Center" Background="#fc6822" BorderThickness="0" Margin="0 20 0 0" Width="300" Style="{StaticResource roundedButton}" Click="goToLoginButton_Click">
+                        Назад в меню
+                    </Button>
+                </StackPanel>
+                <!-- Logo -->
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
+                    <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="White" Width="25" Height="25" HorizontalAlignment="Left"/>
+                    <Label Content="Playground" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Border Grid.Column="1" Padding="50">
+            <Grid>
+                <StackPanel Height="auto">
+                    <Label Content="Регистрация" Foreground="{DynamicResource TextPrimaryColor}" FontSize="30" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label Content="Пожалуйста, введие Ваши данные!" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0 0 0 0"/>
+
+                    <Label Content="Имя" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0"/>
+                    <TextBox x:Name="registrationName" Padding="5" Height="50" FontSize="20" Style="{StaticResource normalText}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+                    <Label Content="Никнейм" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0"/>
+                    <TextBox x:Name="registrationUsername" Padding="5" Height="50" FontSize="20" Style="{StaticResource normalText}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+                    <Label Content="Пароль" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0 20 0 0"/>
+                    <PasswordBox x:Name="registrationPassword" Padding="5" Height="50" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+                    <Button x:Name="registrationButton" Foreground="White" FontSize="20" Height="60" HorizontalAlignment="Right" Background="#fc6822" BorderThickness="0" Margin="0 20 0 0" Width="250" Style="{StaticResource roundedButton}" Click="registrationButton_Click">
+                        Зарегистрировать
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
